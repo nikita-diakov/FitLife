@@ -3,6 +3,9 @@
 # Определяем константы
 WATER_PER_KG = 30
 ML_PER_LITER = 1000
+MIN_AGE = 0
+MIN_WEIGHT = 0
+MIN_HEIGHT = 0
 
 
 # Создаем функцию для UI (статичная строчка из знака "равно")
@@ -25,8 +28,8 @@ user_name = input('Давайте познакомимся! Как Вас зов
 while True:
     try:
         user_age = int(input('Сколько Вам лет? '))
-        if user_age <= 0:
-            print('Возраст должен быть больше 0!')
+        if user_age <= MIN_AGE:
+            print(f'Возраст должен быть больше {MIN_AGE}!')
             continue
         break
     except ValueError:
@@ -42,8 +45,8 @@ while True:
         user_weight = float(input(
             'Введите, пожалуйста, свой вес в кг. (например, 85): '
         ))
-        if user_weight <= 0:
-            print('Вес должен быть больше 0!')
+        if user_weight <= MIN_WEIGHT:
+            print(f'Вес должен быть больше {MIN_WEIGHT}!')
             continue
         break
     except ValueError:
@@ -56,8 +59,8 @@ while True:
         user_height = float(input(
             'Введите, пожалуйста, рост в метрах (например, 1.90): '
         ))
-        if user_height <= 0:
-            print('Рост должен быть больше 0!')
+        if user_height <= MIN_HEIGHT:
+            print(f'Рост должен быть больше {MIN_HEIGHT}!')
             continue
         break
     except ValueError:
